@@ -1,0 +1,32 @@
+<div>
+    <h2>Passageiros</h2>
+</div>
+<hr />
+<div ng-controller="personCtrl">
+    <div class="col-sm-6">
+        <div class="input-group">
+            <!--<label for="filter">Filtro</label>-->
+            <input name="filter" class="form-control" id="filter" type="text" ng-change="updateFilteredList()" placeholder="Pesquise por parte do nome" ng-model = "search" autofocus>
+            <span class="input-group-btn">
+                <button class="btn btn-primary" type="submit">
+                    <span class="glyphicon glyphicon-search"></span>
+                </button>
+            </span>
+        </div>
+    </div>
+    <table at-table at-paginated at-list="filterList" at-config="config" class="table table-striped">
+        <thead></thead>
+        <tbody>
+        <tr>
+            <td at-implicit at-sortable at-attribute="name"     at-title="Nome" ></td>
+            <td at-implicit at-sortable at-attribute="phone"    at-title="Telefone"></td>
+            <td class="actions">
+                <a class="btn btn-warning btn-xs" href="#/person/{{item.id}}">Editar</a>
+                <a class="btn btn-danger btn-xs" href="#/person/payment/{{item.id}}">Pagamentos</a>
+                <a class="btn btn-danger btn-xs" data-toggle="modal" ng-click="setPerson(item);" data-target="#delete-modal">Excluir</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <at-pagination style="margin-left: auto; margin-right: auto; text-align: center;" at-config="config" at-list="filterList"></at-pagination>
+</div>

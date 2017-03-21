@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="loginModule">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="icon" href="favicon.ico">
+        <title>Tela de Identificação</title>
+        <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/signin.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container" ng-controller="loginCtrl" >
+            <form name="form" class="form-signin" novalidate >
+                <div class="alert alert-danger fade in" ng-show = "fail && submitted" >Usuário e ou senha inválidos</div>
+                <h2 style="text-align: center" class="form-signin-heading">Identificação</h2>
+                <div class="form-group" ng-class="{'has-error' : submitted && form.username.$invalid}">
+                    <label for="username" >Usuário</label>
+                    <input type="text" id="username" name="username" class="form-control" placeholder="Usuário" ng-model="user.username" required autofocus>
+                    <span ng-show="submitted && form.username.$invalid" class="help-block">Usuário não informado.</span>
+                </div>
+                <div class="form-group" ng-class="{'has-error' : submitted && form.password.$invalid}">
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" name="password" class="form-control" placeholder="Senha" ng-model="user.password" required>
+                    <span ng-show="submitted && form.password.$invalid" class="help-block">Senha não infomada.</span>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="remember"> Lembrar-me
+                    </label>
+                </div>
+                <button class="btn btn-lg btn-primary btn-block" ng-click="login(form.$valid)" type="submit">Entrar</button>
+                <!--<img ng-if="vm.dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />-->
+            </form>
+        </div>
+    </body>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/controller/loginCtrl.js"></script>
+</html>

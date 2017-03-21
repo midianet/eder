@@ -1,0 +1,26 @@
+{
+  "name": "eder",
+  "authors": [
+    "marcosfernandocosta"
+  ],
+  "description": "site do eder",
+  "main": "index.html",
+  "keywords": [
+    "foda-se"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "angular": "^1.6.3",
+    "angular-route": "^1.6.3",
+  }
+}
